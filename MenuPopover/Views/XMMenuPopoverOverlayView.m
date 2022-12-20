@@ -23,13 +23,13 @@
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    if (XMMenuPopover.sharedMenuPopover.menuInHideAnimation) {
+    if (XMMenuPopover.shared.menuInHideAnimation) {
         return  nil;
     }
-    if (XMMenuPopover.sharedMenuPopover.tapPointHandler != nil) {
-        XMMenuPopover.sharedMenuPopover.tapPointHandler(point);
+    if (XMMenuPopover.shared.tapPointHandler != nil) {
+        XMMenuPopover.shared.tapPointHandler(point);
     }
-    [XMMenuPopover.sharedMenuPopover hideMenu];
+    [XMMenuPopover.shared hideMenu];
     return nil;
 }
 

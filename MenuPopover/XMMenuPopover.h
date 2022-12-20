@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XMMenuPopover : NSObject
 
-@property(class, nonatomic, readonly) XMMenuPopover *sharedMenuPopover;
+@property(class, nonatomic, readonly) XMMenuPopover *shared;
 
 @property(nonatomic,getter=isMenuVisible) BOOL menuVisible;        // 默认值： NO
 

@@ -23,7 +23,7 @@
 @implementation XMMenuPopover
 
 XMMenuPopover *popover;
-+ (XMMenuPopover *)sharedMenuPopover {
++ (XMMenuPopover *)shared {
     if (popover != nil) { return  popover; }
     popover = [[XMMenuPopover alloc] init];
     [popover config];

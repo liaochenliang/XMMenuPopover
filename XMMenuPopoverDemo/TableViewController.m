@@ -74,7 +74,7 @@
         return;
     }
     
-    XMMenuPopover *menu = [XMMenuPopover sharedMenuPopover];
+    XMMenuPopover *menu = [XMMenuPopover shared];
     menu.style = style;
     
     //MARK: 自定义菜单项风格【字体颜色、字体大小、背景色】
@@ -120,7 +120,7 @@
         [self showCustomView:targetView withIndex:index];
         return;
     }
-    XMMenuPopover *menu = [XMMenuPopover sharedMenuPopover];
+    XMMenuPopover *menu = [XMMenuPopover shared];
     menu.tapPointHandler = ^(CGPoint point) {
         NSLog(@"%@", @(point));
     };
@@ -188,7 +188,7 @@
     label.textColor = UIColor.whiteColor;
     [customView addSubview:label];
     
-    XMMenuPopover *menu = [XMMenuPopover sharedMenuPopover];
+    XMMenuPopover *menu = [XMMenuPopover shared];
     menu.style = XMMenuStyleCustom;
     menu.avoidTopMargin += 44;
     menu.customView = customView;
