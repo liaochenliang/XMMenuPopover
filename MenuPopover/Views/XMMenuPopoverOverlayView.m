@@ -22,15 +22,27 @@
     return self;
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    if (XMMenuPopover.shared.menuInHideAnimation) {
+//        return  nil;
+//    }
+//    if (XMMenuPopover.shared.tapPointHandler != nil) {
+//        XMMenuPopover.shared.tapPointHandler(point);
+//    }
+//    [XMMenuPopover.shared hideMenu];
+//    return nil;
+//}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if (XMMenuPopover.shared.menuInHideAnimation) {
-        return  nil;
+        return;
     }
     if (XMMenuPopover.shared.tapPointHandler != nil) {
+        UITouch *aTouch = [touches anyObject];
+        CGPoint point = [aTouch locationInView:self];
         XMMenuPopover.shared.tapPointHandler(point);
     }
     [XMMenuPopover.shared hideMenu];
-    return nil;
 }
 
 @end
